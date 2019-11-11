@@ -35,6 +35,8 @@ type frame struct {
 // ProtoMessage tags a frame as valid proto message
 func (f *frame) ProtoMessage() {}
 
+func (f *frame) Reset() { *f = frame{} }
+
 func (c *rawCodec) Marshal(v interface{}) ([]byte, error) {
 	out, ok := v.(*frame)
 	if !ok {
