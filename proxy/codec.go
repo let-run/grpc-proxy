@@ -32,6 +32,9 @@ type frame struct {
 	payload []byte
 }
 
+// ProtoMessage tags a frame as valid proto message
+func (f *frame) ProtoMessage() {}
+
 func (c *rawCodec) Marshal(v interface{}) ([]byte, error) {
 	out, ok := v.(*frame)
 	if !ok {
