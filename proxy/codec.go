@@ -38,7 +38,7 @@ func (f *frame) ProtoMessage() {}
 func (f *frame) Reset() { *f = frame{} }
 
 func (f *frame) String() string {
-	return proto.CompactTextString(m)
+	return proto.CompactTextString(f)
 }
 
 func (c *rawCodec) Marshal(v interface{}) ([]byte, error) {
